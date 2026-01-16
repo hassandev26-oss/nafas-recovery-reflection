@@ -22,7 +22,7 @@
   }
   </script>
 
-  <!-- Tailwind CDN for Preview/Dev (AI Studio) -->
+  <!-- Tailwind CDN for Preview/Dev (AI Studio only - ignored by Vite build if not imported) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -46,15 +46,15 @@
     }
   </script>
 
-  <!-- Custom Styles for CDN (Using type="text/tailwindcss" prevents Vite from trying to process this during build) -->
-  <style type="text/tailwindcss">
-    @layer base {
-      body {
-        @apply bg-[#1c1c1a] text-[#e7e5e4] font-sans;
-      }
-      h1, h2, h3 {
-        @apply font-serif;
-      }
+  <!-- Standard CSS Fallback (Safe for both CDN and Build) -->
+  <style>
+    body {
+      background-color: #1c1c1a;
+      color: #e7e5e4;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
     }
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
