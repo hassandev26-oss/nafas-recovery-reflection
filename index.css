@@ -6,15 +6,17 @@
   body {
     @apply bg-[#1c1c1a] text-[#e7e5e4] font-sans;
   }
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-}
-.scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+  }
+  .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  }
 }
