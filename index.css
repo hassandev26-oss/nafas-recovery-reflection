@@ -1,1 +1,21 @@
-/* Styles are handled via Tailwind CDN in index.html for this environment */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#1c1c1a] text-[#e7e5e4] font-sans;
+  }
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+/* Custom Utilities */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
