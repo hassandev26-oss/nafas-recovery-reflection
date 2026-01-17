@@ -28,6 +28,7 @@ export interface Post {
   tags: string[];
   affirmations: Record<AffirmationType, number>;
   comments: Comment[];
+  isHidden?: boolean;
 }
 
 export enum NotificationType {
@@ -74,4 +75,25 @@ export interface PathPhase {
   name: string;
   description: string;
   indicator: string;
+}
+
+export interface Flag {
+  id: string;
+  reporterId: string;
+  postId: string;
+  reason: string;
+  status: 'pending' | 'resolved' | 'dismissed';
+  timestamp: Date;
+  postContent?: string; // Joined from posts table
+  postAuthor?: string;
+}
+
+export interface Feedback {
+  id: string;
+  userId: string;
+  userNickname?: string;
+  content: string;
+  type: 'suggestion' | 'bug' | 'other';
+  status: 'new' | 'reviewed';
+  timestamp: Date;
 }

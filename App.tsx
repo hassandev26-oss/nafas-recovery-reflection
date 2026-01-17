@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { supabase } from './services/api';
@@ -9,6 +10,7 @@ import Me from './pages/Me';
 import Login from './pages/Login';
 import Landing from './pages/Landing';
 import Legal from './pages/Legal';
+import ModeratorPortal from './pages/ModeratorPortal';
 import BottomNav from './components/BottomNav';
 import Navigation from './components/Navigation';
 
@@ -88,6 +90,7 @@ const App: React.FC = () => {
                     <Route path="reflect" element={<Reflect />} />
                     <Route path="community" element={<Community />} />
                     <Route path="me" element={<Me onLogout={handleLogout} />} />
+                    <Route path="mod" element={<ModeratorPortal />} />
                     <Route path="*" element={<Navigate to="/home" replace />} />
                   </Routes>
                 </main>
